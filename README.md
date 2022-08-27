@@ -17,3 +17,6 @@ In this application, you can get weather data in the city
 ## Application Deployment
 
 Create a .env file in the root of the project
+
+## To see the documentation follow the path
+/api-docs
