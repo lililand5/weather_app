@@ -38,3 +38,5 @@ gem 'active_model_serializers'
 gem 'bcrypt'
 gem 'devise_token_auth'
 gem 'sidekiq'
+
+gem "grape", "~> 1.6"
