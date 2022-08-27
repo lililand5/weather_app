@@ -15,6 +15,7 @@ gem 'whenever'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capybara', '>= 2.15'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'faker'
@@ -22,9 +23,11 @@ group :development, :test do
   gem 'rspec-rails', '>= 3.9.0'
   gem 'rubocop'
   gem 'rubocop-rspec', require: false
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov'
   gem 'sql_queries_count'
+  gem 'webdrivers'
 end
 
 group :development do
