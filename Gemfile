@@ -12,6 +12,10 @@ gem 'rack-cors'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem 'rswag'
 gem 'whenever'
+gem "grape", "~> 1.6"
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
+# gem 'grape-swagger-ui'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -38,5 +42,3 @@ gem 'active_model_serializers'
 gem 'bcrypt'
 gem 'devise_token_auth'
 gem 'sidekiq'
-
-gem "grape", "~> 1.6"
