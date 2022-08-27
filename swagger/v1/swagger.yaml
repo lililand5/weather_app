@@ -17,6 +17,19 @@ paths:
                 properties:
                   status:
                     type: string
+  "/weather/current":
+    get:
+      summary: Return current temperature
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  current_temp:
+                    type: string
 servers:
 - url: https://{defaultHost}
   variables:
