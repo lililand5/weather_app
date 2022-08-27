@@ -1,9 +1,25 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require 'swagger_helper'
 
-RSpec.describe 'Mains', type: :request do
-  describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+RSpec.describe 'Main', type: :request do
+  path '/health' do
+    get 'Return server status' do
+      produces 'application/json'
+
+      response(200, 'successful') do
+        schema type: :object,
+               properties: {
+                 status: { type: :string }
+               }
+
+        after do
+          body = JSON.parse(response.body, symbolize_names: true)
+          expect(body[:status]).to eq('OK')
+        end
+
+        run_test!
+      end
+    end
   end
 end
