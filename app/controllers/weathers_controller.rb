@@ -2,7 +2,10 @@
 
 class WeathersController < ApplicationController
   def current
-    render json: { current_temp: '00' }
+    service = CurrentTempService.new
+    service.set_current_temp
+
+    render json: service.result    # render json: body.first["LocalObservationDateTim"]
   end
 
   def historical
