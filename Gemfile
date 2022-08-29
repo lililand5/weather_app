@@ -9,7 +9,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
-gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
+gem 'rails', '= 6.1.4.1'
 gem 'rswag'
 gem 'whenever'
 
