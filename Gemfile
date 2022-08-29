@@ -9,7 +9,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
-gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
+gem 'rails', '= 6.1.4.1'
 gem 'rswag'
 gem 'whenever'
 
@@ -40,4 +40,7 @@ end
 gem 'active_model_serializers'
 gem 'bcrypt'
 gem 'devise_token_auth'
-gem 'sidekiq'
+gem 'sidekiq', '6.5.5'
+gem 'sidekiq-scheduler'
+
+gem 'redis', '4.7.1'

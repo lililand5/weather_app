@@ -10,18 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_27_210610) do
+ActiveRecord::Schema.define(version: 2022_08_29_032943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "weathers", force: :cascade do |t|
-    t.string "city"
-    t.string "current_temp"
-    t.string "historical"
-    t.float "historical_max"
-    t.float "historical_min"
-    t.float "historical_avg"
+    t.datetime "local_time"
+    t.bigint "epoch_time"
+    t.float "temperature"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

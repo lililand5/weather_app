@@ -2,7 +2,7 @@
 
 class WeathersController < ApplicationController
   def current
-    render json: { current_temp: '00' }
+    render json: '123'
   end
 
   def historical
