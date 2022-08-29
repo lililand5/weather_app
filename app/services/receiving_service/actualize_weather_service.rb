@@ -15,17 +15,19 @@ module ReceivingService
       Weather.create_with(created_at: Time.now, updated_at: Time.now).insert_all(weathers_to_db)
     end
 
-    def prepared_data
-      coming_data.map do |data|
-        { local_time: data[:LocalObservationDateTime], epoch_time: data[:EpochTime],
-          temperature: data[:Temperature][:Metric][:Value] }
-      end
-    end
+    private
 
     def weathers_to_db(last_time_from_base)
       weathers_array = prepared_data.select { |weather| weather[:epoch_time] > last_time_from_base }
 
       weathers_array.sort { |a, b| a[:epoch_time] <=> b[:epoch_time] }
+    end
+
+    def prepared_data
+      coming_data.map do |data|
+        { local_time: data[:LocalObservationDateTime], epoch_time: data[:EpochTime],
+          temperature: data[:Temperature][:Metric][:Value] }
+      end
     end
 
     def coming_data
