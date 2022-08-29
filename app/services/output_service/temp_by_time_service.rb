@@ -19,7 +19,7 @@ module OutputService
 
     def close_weather(times_list, target_time)
       if target_time > times_list.last
-        'not found datetime!'
+        { message: 'Date or time not foud!', error_status: 404 }
       elsif target_time < times_list.first
         @weathers.last
       else
