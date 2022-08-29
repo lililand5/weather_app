@@ -15,8 +15,23 @@ In this application, you can get weather data in the city
 
 
 ## Application Deployment
-
 Create a .env file in the root of the project
+### fill in the following data(example)
+DATABASE_USERNAME=postgres
+DEVELOPMENT_DATABASE=weather_db
+TEST_DATABASE=test_weather_db
+PRODUCTION_DATABASE=production_weather_db
 
-## To see the documentation follow the path
+### Sidekiq
+In order to get the starting temperature is used sidekiq
+To use tasks you need to install redis-server
+```sh
+apt-get install redis-server
+```
+and run
+```sh
+bundle exec sidekiq
+```
+
+### To see the documentation follow the path
 /api-docs
