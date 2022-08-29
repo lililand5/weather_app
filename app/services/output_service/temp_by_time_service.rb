@@ -19,13 +19,13 @@ module OutputService
 
     def close_weather(times_list, target_time)
       if target_time > times_list.last
-        { message: 'Date or time not foud!', error_status: 404 }
+        { body: '404: Not Found', status: 404 }
       elsif target_time < times_list.first
-        @weathers.last
+        { body: @weathers.first, status: 200 }
       else
         times = OutputService::BinarySearchService.new.search(times_list, target_time)
         close_time = close_time(times, target_time)
-        set_close_weather(close_time)
+        { body: find_close_weather(close_time), status: 200 }
       end
     end
 
