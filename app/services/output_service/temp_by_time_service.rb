@@ -12,7 +12,6 @@ module OutputService
 
       times_list = @weathers.pluck(:epoch_time)
       target_time = DateTime.parse(@date_time).to_i
-
       close_weather(times_list, target_time)
     end
 
@@ -33,9 +32,7 @@ module OutputService
     def close_time(times, target_time)
       first = (times.first - target_time).abs
       last = (times.last - target_time).abs
-
       close_time = first < last ? times.first : times.last
-
       Time.at(close_time).utc.to_datetime
     end
 
