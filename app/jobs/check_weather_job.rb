@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-class HardJob
+class CheckWeatherJob
   include Sidekiq::Job
 
   def perform
-    puts '# Do something!!!'
+    ActualizeWeatherJob.perform_later
   end
 end
