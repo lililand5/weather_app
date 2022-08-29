@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2022_08_29_032943) do
   enable_extension "plpgsql"
 
   create_table "weathers", force: :cascade do |t|
-    t.datetime "weather_time"
+    t.datetime "local_time"
+    t.bigint "epoch_time"
     t.float "temperature"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
