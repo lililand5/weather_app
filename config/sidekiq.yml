@@ -5,7 +5,13 @@ development:
 # :max_retries: 10
 
 :schedule:
-  check_match_every_hour:
+  run_now:
+    in: 0s   # Runs now
+    class: ActualizeWeatherJob
+    description: "Run now. Actualize temperature when the application starts"
+
+  check_every_hour:
+    # cron: '0 0 * * * *'   # Runs once per 1 hour
     cron: '*/5 * * * * *'   # Runs once per 1 hour
     class: HardJob
-    description: "Runs every hour. Сheck matches, witch have not been parsed. Put an asynchronous task on parsing queue"
+    description: "Runs every hour. Actualize temperature"
