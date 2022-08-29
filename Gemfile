@@ -37,7 +37,6 @@ group :development do
   gem 'spring'
 end
 
-gem 'active_model_serializers'
 gem 'bcrypt'
 gem 'devise_token_auth'
 gem 'sidekiq', '6.5.5'
