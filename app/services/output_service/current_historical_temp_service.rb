@@ -14,10 +14,12 @@ module OutputService
       end
     end
 
+    private
+
     def list_history_temperature
       @weathers.map do |weather|
         {
-          time: weather.local_time.in_time_zone('Moscow').strftime('%Y-%m-%d %H:%M:%S %z'),
+          time: weather.local_time.strftime('%Y-%m-%d %H:%M:%S %z'),
           temperature: weather.temperature
         }
       end
