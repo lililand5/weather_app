@@ -6,7 +6,6 @@ class CurrentTempSerializer < ActiveModel::Serializer
   def current_temperature
     {
       time: DateTime.parse(object.local_time.to_s).strftime('%Y-%m-%d %H:%M:%S %z'),
-
       temperature: object.temperature
     }
   end
