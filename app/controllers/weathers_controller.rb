@@ -4,7 +4,7 @@ class WeathersController < ApplicationController
   before_action :create_last_history_service, only: %i[historical historical_max historical_min historical_avg]
 
   def current
-    render json: Weather.last, serializer: CurrentTempSerializer
+    render json: OutputService::CurrentTempService.new(Weather.last).result
   end
 
   def historical
@@ -24,12 +24,12 @@ class WeathersController < ApplicationController
   end
 
   def by_time
-    render json: AllHistoricalService.new(Weather.all, params[:date_time]).result
+    render json: OutputService::AllHistoricalService.new(Weather.all, params[:date_time]).result
   end
 
   private
 
   def create_last_history_service
-    @last_history_service = CurrentHistoricalTempService.new(Weather.last(24))
+    @last_history_service = OutputService::CurrentHistoricalTempService.new(Weather.last(24))
   end
 end

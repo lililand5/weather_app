@@ -4,7 +4,7 @@ class ActualizeWeatherJob
   include Sidekiq::Job
 
   def perform
-    service = ActualizeWeatherService.new
+    service = ReceivingService::ActualizeWeatherService.new
     service.actualize
   end
 end
