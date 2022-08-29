@@ -40,4 +40,7 @@ end
 gem 'active_model_serializers'
 gem 'bcrypt'
 gem 'devise_token_auth'
-gem 'sidekiq'
+gem "sidekiq", "6.5.5"
+gem 'sidekiq-scheduler'
+
+gem "redis", "4.7.1"

@@ -2,10 +2,12 @@
 
 class WeathersController < ApplicationController
   def current
-    service = CurrentTempService.new
-    service.set_current_temp
+    # service = CurrentTempService.new
+    # service.set_current_temp
 
-    render json: service.result    # render json: body.first["LocalObservationDateTim"]
+    # render json: service.result    # render json: body.first["LocalObservationDateTim"]
+
+    HardJob.perform_async
   end
 
   def historical
