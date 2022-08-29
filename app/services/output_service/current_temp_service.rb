@@ -9,7 +9,7 @@ module OutputService
     def result
       Time.zone = 'Moscow'
       {
-        time: Time.zone.parse(@weather.local_time.to_s).strftime('%Y-%m-%d %H:%M:%S %z'),
+        time: @weather.local_time.in_time_zone('Moscow').strftime('%Y-%m-%d %H:%M:%S %z'),
         temperature: @weather.temperature
       }
     end

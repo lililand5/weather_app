@@ -24,7 +24,7 @@ class WeathersController < ApplicationController
   end
 
   def by_time
-    render json: OutputService::AllHistoricalService.new(Weather.all, params[:date_time]).result
+    render json: OutputService::TempByTimeService.new(Weather.all, params[:date_time]).result
   end
 
   private

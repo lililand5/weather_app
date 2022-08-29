@@ -17,7 +17,7 @@ module OutputService
     def list_history_temperature
       @weathers.map do |weather|
         {
-          time: weather.local_time,
+          time: weather.local_time.in_time_zone('Moscow').strftime('%Y-%m-%d %H:%M:%S %z'),
           temperature: weather.temperature
         }
       end

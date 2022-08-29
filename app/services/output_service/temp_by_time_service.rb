@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module OutputService
-  class AllHistoricalService
+  class TempByTimeService
     def initialize(weathers, date_time)
       @weathers = weathers
       @date_time = date_time
