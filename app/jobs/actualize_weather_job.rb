@@ -5,6 +5,6 @@ class ActualizeWeatherJob
 
   def perform
     service = ActualizeWeatherService.new
-    service.check_weather
+    service.actualize
   end
 end
