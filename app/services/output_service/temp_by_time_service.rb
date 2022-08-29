@@ -8,19 +8,19 @@ module OutputService
     end
 
     def result
-      # target_time = DateTime.parse(@date_time - 3.hour ).to_i
-      target_time = DateTime.parse(@date_time).strftime('%Y-%m-%d %H:%M:%S')
-      # @date_time
-      # weather_time_list.include?(target_time)
+      times_list = @weathers.pluck(:epoch_time)
+      target_time = DateTime.parse(@date_time).to_i
+      times = OutputService::BinarySearchService.new.search(times_list, target_time)
+      unix_time = set_close_time(times, target_time)
 
-      # weather_time_list
-      @weathers.pluck(:local_time)
-
-      # @date_time
+      Time.at(unix_time).utc.to_datetime
     end
 
-    def weather_time_list
-      @weathers.pluck(:local_time)
+    def set_close_time(times, target_time)
+      first = (times.first - target_time).abs
+      last = (times.last - target_time).abs
+
+      first < last ? times.first : times.last
     end
   end
 end
