@@ -29,9 +29,86 @@ paths:
                 type: object
                 properties:
                   time:
-                    type: number
+                    type: string
                   temperature:
                     type: number
+                required:
+                - time
+                - temperature
+  "/weather/historical":
+    get:
+      summary: Return last 24 temperature
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    time:
+                      type: string
+                    temperature:
+                      type: number
+                  required:
+                  - time
+                  - temperature
+  "/weather/historical/max":
+    get:
+      summary: Return the maximum temperature for the last 24 hours
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: number
+  "/weather/historical/min":
+    get:
+      summary: Return the minimum temperature for the last 24 hours
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: number
+  "/weather/historical/avg":
+    get:
+      summary: Return the average temperature for the last 24 hours
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: number
+  "/weather/by_time":
+    parameters:
+    - name: date_time
+      in: query
+      description: date from client
+      schema:
+        type: string
+    get:
+      summary: Return temperature by time
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  time:
+                    type: string
+                  temperature:
+                    type: number
+                required:
+                - time
+                - temperature
 servers:
 - url: https://{defaultHost}
   variables:
