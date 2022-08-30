@@ -15,8 +15,7 @@ In this application, you can get weather data in the city
 
 
 ## Application Deployment
-Create a .env file in the root of the project
-### fill in the following data(example)
+Create a .env file in the root of the project. Fill in the following data(example)
 - DATABASE_USERNAME=postgres
 - DEVELOPMENT_DATABASE=weather_db
 - TEST_DATABASE=test_weather_db
