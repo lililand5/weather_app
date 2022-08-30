@@ -13,6 +13,8 @@ module OutputService
       close_weather
     end
 
+    private
+
     def close_weather
       weathers = Weather.where(epoch_time: ((@date_time - 3600)..(@date_time + 3600))).to_a
       range = weathers.map { |weather| (weather.epoch_time - @date_time).abs }
