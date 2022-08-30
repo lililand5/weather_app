@@ -10,7 +10,10 @@ gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
 gem 'rails', '= 6.1.4.1'
+gem 'redis', '4.7.1'
 gem 'rswag'
+gem 'sidekiq', '6.5.5'
+gem 'sidekiq-scheduler'
 gem 'whenever'
 
 group :development, :test do
@@ -36,10 +39,3 @@ group :development do
   gem 'seed_dump'
   gem 'spring'
 end
-
-gem 'bcrypt'
-gem 'devise_token_auth'
-gem 'sidekiq', '6.5.5'
-gem 'sidekiq-scheduler'
-
-gem 'redis', '4.7.1'
