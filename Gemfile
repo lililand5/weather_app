@@ -8,13 +8,11 @@ ruby '2.7.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pg'
 gem 'puma', '~> 5.0'
-gem 'rack-cors'
 gem 'rails', '= 6.1.4.1'
 gem 'redis', '4.7.1'
 gem 'rswag'
 gem 'sidekiq', '6.5.5'
 gem 'sidekiq-scheduler'
-gem 'whenever'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
