@@ -28,8 +28,10 @@ paths:
               schema:
                 type: object
                 properties:
-                  current_temp:
-                    type: string
+                  time:
+                    type: number
+                  temperature:
+                    type: number
 servers:
 - url: https://{defaultHost}
   variables:
