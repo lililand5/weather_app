@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ReceivingService
+module ActualizeService
   class ActualizeWeatherService
     URL = 'http://dataservice.accuweather.com/currentconditions/v1/294021/historical/24'
     API_KEY = '10MV1FEulA3c3AoKzzrfJRGQVtBpE3Yw'

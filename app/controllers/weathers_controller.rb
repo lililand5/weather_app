@@ -24,19 +24,15 @@ class WeathersController < ApplicationController
   end
 
   def by_time
-    render json: 'Bad request', status: '400' and return if check_params(params[:date_time])
+    render json: 'Bad request', status: '400' and return if params[:date_time].blank?
 
-    servise = OutputService::TempByTimeService.new(Weather.all, params[:date_time]).result
-    render json: servise[:body], status: servise[:status]
+    servise = OutputService::TempByTimeService.new(params[:date_time].to_i).result
+    render json: servise, status: servise[:status]
   end
 
   private
 
   def create_last_history_service
     @last_history_service = OutputService::CurrentHistoricalTempService.new(Weather.last(24))
-  end
-
-  def check_params(params)
-    params.nil? || params !~ /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/i
   end
 end
