@@ -8,7 +8,7 @@ module OutputService
 
     def result
       return { message: '404: Not Found', status: 404 } if @date_time > Weather.last.epoch_time
-      return Weather.first if @date_time < Weather.first.epoch_time
+      return format_weather(Weather.first) if @date_time < Weather.first.epoch_time
 
       close_weather
     end

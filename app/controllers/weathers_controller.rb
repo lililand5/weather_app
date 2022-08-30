@@ -35,8 +35,4 @@ class WeathersController < ApplicationController
   def create_last_history_service
     @last_history_service = OutputService::CurrentHistoricalTempService.new(Weather.last(24))
   end
-
-  # def check_params(params)
-  #   params.nil? || params !~ /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/i
-  # end
 end
