@@ -2,42 +2,30 @@
 
 module OutputService
   class TempByTimeService
-    def initialize(weathers, date_time)
-      @weathers = weathers
+    def initialize(date_time)
       @date_time = date_time
     end
 
     def result
-      return if @weathers.empty?
+      return { message: '404: Not Found', status: 404 } if @date_time > Weather.last.epoch_time
+      return format_weather(Weather.first) if @date_time < Weather.first.epoch_time
 
-      times_list = @weathers.pluck(:epoch_time)
-      target_time = DateTime.parse(@date_time).to_i
-      close_weather(times_list, target_time)
+      close_weather
     end
 
     private
 
-    def close_weather(times_list, target_time)
-      if target_time > times_list.last
-        { body: '404: Not Found', status: 404 }
-      elsif target_time < times_list.first
-        { body: @weathers.first, status: 200 }
-      else
-        times = OutputService::BinarySearchService.new.search(times_list, target_time)
-        close_time = close_time(times, target_time)
-        { body: find_close_weather(close_time), status: 200 }
-      end
+    def close_weather
+      weathers = Weather.where(epoch_time: ((@date_time - 3600)..(@date_time + 3600))).to_a
+      range = weathers.map { |weather| (weather.epoch_time - @date_time).abs }
+      range.first < range.last ? format_weather(weathers.first) : format_weather(weathers.last)
     end
 
-    def close_time(times, target_time)
-      first = (times.first - target_time).abs
-      last = (times.last - target_time).abs
-      close_time = first < last ? times.first : times.last
-      Time.at(close_time).utc.to_datetime
-    end
-
-    def find_close_weather(close_time)
-      @weathers.find_by(local_time: close_time)
+    def format_weather(weather)
+      {
+        time: weather.local_time,
+        temperature: weather.temperature
+      }
     end
   end
 end

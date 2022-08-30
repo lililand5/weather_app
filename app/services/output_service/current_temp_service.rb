@@ -8,7 +8,7 @@ module OutputService
 
     def result
       {
-        time: @weather.local_time.strftime('%Y-%m-%d %H:%M:%S %z'),
+        time: @weather.local_time,
         temperature: @weather.temperature
       }
     end

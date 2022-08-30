@@ -19,7 +19,7 @@ module OutputService
     def list_history_temperature
       @weathers.map do |weather|
         {
-          time: weather.local_time.strftime('%Y-%m-%d %H:%M:%S'),
+          time: weather.local_time,
           temperature: weather.temperature
         }
       end
