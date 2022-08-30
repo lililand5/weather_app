@@ -4,6 +4,7 @@ AllCops:
     - config/**/*
     - script/**/*
     - bin/bundle
+    - spec/requests/*
 
 Style/Documentation:
   Enabled: false
