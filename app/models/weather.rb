@@ -28,6 +28,7 @@ class Weather < ApplicationRecord
 
   def self.by_time(unix_time)
     return { message: '400: Blank time', status: 400 } if unix_time.nil?
+
     TempByTimeService.new(unix_time).result
   end
 
@@ -38,7 +39,7 @@ class Weather < ApplicationRecord
   end
 
   def self.cache_weathers
-    Rails.cache.fetch('last', expires_in: 1.minute) do
+    Rails.cache.fetch('last24', expires_in: 1.minute) do
       last(24)
     end
   end
