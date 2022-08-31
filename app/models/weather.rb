@@ -26,6 +26,8 @@ class Weather < ApplicationRecord
     calculate_avg(weathers)
   end
 
+  private
+
   def self.cache_weather
     Rails.cache.fetch('last', expires_in: 1.minute) do
       self.last
