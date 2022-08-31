@@ -15,12 +15,13 @@ In this application, you can get weather data in the city
 
 
 ## Application Deployment
-Create a .env file in the root of the project
-### fill in the following data(example)
+Create a .env file in the root of the project. Fill in the following data(example)
 - DATABASE_USERNAME=postgres
 - DEVELOPMENT_DATABASE=weather_db
 - TEST_DATABASE=test_weather_db
 - PRODUCTION_DATABASE=production_weather_db
+- KEY_CITY=294021
+- API_KEY=10MV1FEulA3c3AoKzzrfJRGQVtBpE3Yw
 
 ### Sidekiq
 In order to get the starting temperature is used sidekiq

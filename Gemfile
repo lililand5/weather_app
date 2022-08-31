@@ -8,10 +8,11 @@ ruby '2.7.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pg'
 gem 'puma', '~> 5.0'
-gem 'rack-cors'
 gem 'rails', '= 6.1.4.1'
+gem 'redis', '4.7.1'
 gem 'rswag'
-gem 'whenever'
+gem 'sidekiq', '6.5.5'
+gem 'sidekiq-scheduler'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -36,10 +37,3 @@ group :development do
   gem 'seed_dump'
   gem 'spring'
 end
-
-gem 'bcrypt'
-gem 'devise_token_auth'
-gem 'sidekiq', '6.5.5'
-gem 'sidekiq-scheduler'
-
-gem 'redis', '4.7.1'
