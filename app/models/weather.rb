@@ -27,6 +27,7 @@ class Weather < ApplicationRecord
   end
 
   def self.by_time(unix_time)
+    return { message: '400: Blank time', status: 400 } if unix_time.nil?
     TempByTimeService.new(unix_time).result
   end
 
