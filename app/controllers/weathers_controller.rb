@@ -1,26 +1,24 @@
 # frozen_string_literal: true
 
 class WeathersController < ApplicationController
-  before_action :create_last_history_service, only: %i[historical historical_max historical_min historical_avg]
-
   def current
-    render json: OutputService::CurrentTempService.new(Weather.last).result
+    render json: Weather.current_weather
   end
 
   def historical
-    render json: @last_history_service.result('all_history')
+    render json: Weather.last_weathers
   end
 
   def historical_max
-    render json: @last_history_service.result('max_temp')
+    render json: Weather.max
   end
 
   def historical_min
-    render json: @last_history_service.result('min_temp')
+    render json: Weather.min
   end
 
   def historical_avg
-    render json: @last_history_service.result('avg_temp')
+    render json: Weather.avg
   end
 
   def by_time
@@ -28,11 +26,5 @@ class WeathersController < ApplicationController
 
     servise = OutputService::TempByTimeService.new(params[:date_time].to_i).result
     render json: servise, status: servise[:status]
-  end
-
-  private
-
-  def create_last_history_service
-    @last_history_service = OutputService::CurrentHistoricalTempService.new(Weather.last(24))
   end
 end

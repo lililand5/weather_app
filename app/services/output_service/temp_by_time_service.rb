@@ -2,29 +2,38 @@
 
 module OutputService
   class TempByTimeService
-    def initialize(date_time)
-      @date_time = date_time
+    def initialize(unix_time)
+      @unix_time = unix_time
     end
 
     def result
-      return { message: '404: Not Found', status: 404 } if @date_time > Weather.last.epoch_time
-      return format_weather(Weather.first) if @date_time < Weather.first.epoch_time
+      # return { message: '404: Not Found', status: 404 } if @unix_time > Weather.last.epoch_time
+      # return format_weather(Weather.first) if @unix_time < Weather.first.epoch_time
 
-      close_weather
+      format_weather(close_weather)
     end
 
     private
 
     def close_weather
-      weathers = Weather.where(epoch_time: ((@date_time - 3600)..(@date_time + 3600))).to_a
-      range = weathers.map { |weather| (weather.epoch_time - @date_time).abs }
-      range.first < range.last ? format_weather(weathers.first) : format_weather(weathers.last)
+      weathers_cache =
+        Rails.cache.fetch("#{@unix_time}", expires_in: 10.minutes) do
+          Weather.where(epoch_time: ((@unix_time - 3600)..(@unix_time + 3600))).to_a
+        end
+
+      weathers = weathers_cache.map do |weather|
+        hash = weather.attributes.symbolize_keys
+        hash[:difference] = (hash[:epoch_time] - @unix_time).abs
+        hash
+      end
+
+      weathers.min { |a, b| a[:difference] <=> b[:difference] }
     end
 
     def format_weather(weather)
       {
-        time: weather.local_time,
-        temperature: weather.temperature
+        time: weather[:local_time],
+        temperature: weather[:temperature]
       }
     end
   end
