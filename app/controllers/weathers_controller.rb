@@ -24,7 +24,7 @@ class WeathersController < ApplicationController
   def by_time
     render json: 'Bad request', status: '400' and return if params[:date_time].blank?
 
-    servise = OutputService::TempByTimeService.new(params[:date_time].to_i).result
+    servise = TempByTimeService.new(params[:date_time].to_i).result
     render json: servise, status: servise[:status]
   end
 end
