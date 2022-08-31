@@ -6,8 +6,7 @@ class TempByTimeService
   end
 
   def result
-    # return { message: '404: Not Found', status: 404 } if @unix_time > Weather.last.epoch_time
-    # return format_weather(Weather.first) if @unix_time < Weather.first.epoch_time
+    return { message: '404: Not Found', status: 404 } if close_weather.nil?
 
     format_weather(close_weather)
   end
@@ -15,18 +14,21 @@ class TempByTimeService
   private
 
   def close_weather
-    weathers_cache =
-      Rails.cache.fetch(@unix_time.to_s, expires_in: 10.minutes) do
-        Weather.where(epoch_time: ((@unix_time - 3600)..(@unix_time + 3600))).to_a
-      end
+    weathers = weathers_cache
 
-    weathers = weathers_cache.map do |weather|
+    weathers.map! do |weather|
       hash = weather.attributes.symbolize_keys
       hash[:difference] = (hash[:epoch_time] - @unix_time).abs
       hash
     end
 
     weathers.min { |a, b| a[:difference] <=> b[:difference] }
+  end
+
+  def weathers_cache
+    Rails.cache.fetch(@unix_time.to_s, expires_in: 10.minutes) do
+      Weather.where(epoch_time: ((@unix_time - 3600)..(@unix_time + 3600))).to_a
+    end
   end
 
   def format_weather(weather)
