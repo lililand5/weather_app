@@ -65,11 +65,19 @@ RSpec.describe 'Weathers', type: :request do
       produces 'application/json'
 
       response(200, 'successful') do
-        schema type: :number
+        schema type: :object,
+               properties: {
+                 time: { type: :string },
+                 temperature: { type: :number }
+               },
+               required: %i[
+                 time
+                 temperature
+               ]
 
         after do
           body = JSON.parse(response.body, symbolize_names: true)
-          expect(body).to eq(weather_three.temperature)
+          expect(body[:temperature]).to eq(weather_three.temperature)
         end
 
         run_test!
@@ -82,11 +90,19 @@ RSpec.describe 'Weathers', type: :request do
       produces 'application/json'
 
       response(200, 'successful') do
-        schema type: :number
+        schema type: :object,
+               properties: {
+                 time: { type: :string },
+                 temperature: { type: :number }
+               },
+               required: %i[
+                 time
+                 temperature
+               ]
 
         after do
           body = JSON.parse(response.body, symbolize_names: true)
-          expect(body).to eq(weather_one.temperature)
+          expect(body[:temperature]).to eq(weather_one.temperature)
         end
 
         run_test!
@@ -112,8 +128,8 @@ RSpec.describe 'Weathers', type: :request do
   end
 
   path '/weather/by_time' do
-    parameter name: 'date_time', in: :query, type: :string, description: 'date from client'
-    let(:date_time) { (Time.now - 1.5.hours) }
+    parameter name: 'unix_time', in: :query, type: :string, description: 'date from client'
+    let(:unix_time) { weather_two.epoch_time }
 
     get 'Return temperature by time' do
       produces 'application/json'
@@ -131,7 +147,7 @@ RSpec.describe 'Weathers', type: :request do
 
         after do
           body = JSON.parse(response.body, symbolize_names: true)
-          expect(body[:temperature]).to eq(weather_one.temperature)
+          expect(body[:temperature]).to eq(weather_two.temperature)
         end
 
         run_test!
