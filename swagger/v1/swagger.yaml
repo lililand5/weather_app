@@ -64,7 +64,15 @@ paths:
           content:
             application/json:
               schema:
-                type: number
+                type: object
+                properties:
+                  time:
+                    type: string
+                  temperature:
+                    type: number
+                required:
+                - time
+                - temperature
   "/weather/historical/min":
     get:
       summary: Return the minimum temperature for the last 24 hours
@@ -74,7 +82,15 @@ paths:
           content:
             application/json:
               schema:
-                type: number
+                type: object
+                properties:
+                  time:
+                    type: string
+                  temperature:
+                    type: number
+                required:
+                - time
+                - temperature
   "/weather/historical/avg":
     get:
       summary: Return the average temperature for the last 24 hours
@@ -87,7 +103,7 @@ paths:
                 type: number
   "/weather/by_time":
     parameters:
-    - name: date_time
+    - name: unix_time
       in: query
       description: date from client
       schema:
