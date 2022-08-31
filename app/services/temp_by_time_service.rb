@@ -16,7 +16,7 @@ class TempByTimeService
 
   def close_weather
     weathers_cache =
-      Rails.cache.fetch("#{@unix_time}", expires_in: 10.minutes) do
+      Rails.cache.fetch(@unix_time.to_s, expires_in: 10.minutes) do
         Weather.where(epoch_time: ((@unix_time - 3600)..(@unix_time + 3600))).to_a
       end
 

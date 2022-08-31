@@ -26,17 +26,15 @@ class Weather < ApplicationRecord
     calculate_avg(weathers)
   end
 
-  private
-
   def self.cache_weather
     Rails.cache.fetch('last', expires_in: 1.minute) do
-      self.last
+      last
     end
   end
 
   def self.cache_weathers
     Rails.cache.fetch('last', expires_in: 1.minute) do
-      self.last(24)
+      last(24)
     end
   end
 
@@ -57,11 +55,11 @@ class Weather < ApplicationRecord
   end
 
   def self.calculate_max(weathers)
-    weathers.select {|w| w[:temperature].to_i }.max
+    weathers.select { |w| w[:temperature].to_i }.max
   end
 
   def self.calculate_min(weathers)
-    weathers.select {|w| w[:temperature].to_i }.min
+    weathers.select { |w| w[:temperature].to_i }.min
   end
 
   def self.calculate_avg(weathers)
