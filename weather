@@ -1,0 +1,627 @@
+ {
+  "fault": {
+    "faultstring": "Failed to resolve API Key variable request.queryparam.apikey",
+    "detail": {
+      "errorcode": "steps.oauth.v2.FailedToResolveAPIKey"
+    }
+  }
+}
+ 
+ 
+ HTTP/1.1 200 OK
+
+Accept:
+    */*
+Accept-Encoding:
+    gzip
+Accept-Language:
+    en-US
+Access-Control-Allow-Headers:
+    origin
+Access-Control-Allow-Methods:
+    GET
+Access-Control-Allow-Origin:
+    *
+Access-Control-Max-Age:
+    3628800
+Akamai-GRN:
+    0.d868dc17.1661747180.1e8e3f0b
+Cache-Control:
+    public
+Connection:
+    keep-alive
+Content-Encoding:
+    gzip
+Content-Type:
+    application/json; charset=utf-8
+Date:
+    Mon, 29 Aug 2022 04:26:20 GMT
+Expires:
+    Mon, 29 Aug 2022 04:36:20 GMT
+Host:
+    api.accuweather.com
+Origin:
+    https://developer.accuweather.com
+RateLimit-Limit:
+    50
+RateLimit-Remaining:
+    44
+Referer:
+    https://developer.accuweather.com/
+Sec-Fetch-Dest:
+    empty
+Sec-Fetch-Mode:
+    cors
+Sec-Fetch-Site:
+    cross-site
+Server:
+    Microsoft-IIS/10.0
+Transfer-Encoding:
+    chunked
+User-Agent:
+    Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:104.0) Gecko/20100101 Firefox/104.0
+Vary:
+    Accept-Encoding
+X-Forwarded-For:
+    84.22.210.2
+X-Forwarded-Port:
+    443
+X-Forwarded-Proto:
+    https
+    
+    
+
+[
+  {
+    "LocalObservationDateTime": "2022-08-29T06:58:00+03:00",
+    "EpochTime": 1661745480,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 17.6,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 64,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-29T05:57:00+03:00",
+    "EpochTime": 1661741820,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 19.8,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 68,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-29T05:04:00+03:00",
+    "EpochTime": 1661738640,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 19.8,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 68,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-29T03:57:00+03:00",
+    "EpochTime": 1661734620,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 21.5,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 71,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-29T03:03:00+03:00",
+    "EpochTime": 1661731380,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 21.5,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 71,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-29T02:04:00+03:00",
+    "EpochTime": 1661727840,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 22,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 72,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-29T00:59:00+03:00",
+    "EpochTime": 1661723940,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 21.3,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 70,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-29T00:04:00+03:00",
+    "EpochTime": 1661720640,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 21.3,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 70,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T22:58:00+03:00",
+    "EpochTime": 1661716680,
+    "WeatherText": "Cloudy",
+    "WeatherIcon": 7,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 22.9,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 73,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T21:58:00+03:00",
+    "EpochTime": 1661713080,
+    "WeatherText": "Mostly cloudy",
+    "WeatherIcon": 38,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 24,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 75,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T20:59:00+03:00",
+    "EpochTime": 1661709540,
+    "WeatherText": "Some clouds",
+    "WeatherIcon": 36,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 25.5,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 78,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T19:58:00+03:00",
+    "EpochTime": 1661705880,
+    "WeatherText": "Partly cloudy",
+    "WeatherIcon": 35,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": false,
+    "Temperature": {
+      "Metric": {
+        "Value": 26.7,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 80,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T18:57:00+03:00",
+    "EpochTime": 1661702220,
+    "WeatherText": "Sunny",
+    "WeatherIcon": 1,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 27.9,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 82,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T17:57:00+03:00",
+    "EpochTime": 1661698620,
+    "WeatherText": "Mostly sunny",
+    "WeatherIcon": 2,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 29,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 84,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T16:57:00+03:00",
+    "EpochTime": 1661695020,
+    "WeatherText": "Partly sunny",
+    "WeatherIcon": 3,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 30.3,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 86,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T15:58:00+03:00",
+    "EpochTime": 1661691480,
+    "WeatherText": "Clouds and sun",
+    "WeatherIcon": 4,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 29.6,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 85,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T15:05:00+03:00",
+    "EpochTime": 1661688300,
+    "WeatherText": "Clouds and sun",
+    "WeatherIcon": 4,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 29.6,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 85,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T13:57:00+03:00",
+    "EpochTime": 1661684220,
+    "WeatherText": "Partly sunny",
+    "WeatherIcon": 3,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 28.6,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 83,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T12:58:00+03:00",
+    "EpochTime": 1661680680,
+    "WeatherText": "Partly sunny",
+    "WeatherIcon": 3,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 27.8,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 82,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T11:59:00+03:00",
+    "EpochTime": 1661677140,
+    "WeatherText": "Mostly sunny",
+    "WeatherIcon": 2,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 26.7,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 80,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T10:58:00+03:00",
+    "EpochTime": 1661673480,
+    "WeatherText": "Mostly sunny",
+    "WeatherIcon": 2,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 25,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 77,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T09:58:00+03:00",
+    "EpochTime": 1661669880,
+    "WeatherText": "Mostly sunny",
+    "WeatherIcon": 2,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 23.4,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 74,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T08:58:00+03:00",
+    "EpochTime": 1661666280,
+    "WeatherText": "Partly sunny",
+    "WeatherIcon": 3,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 21.7,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 71,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  },
+  {
+    "LocalObservationDateTime": "2022-08-28T07:59:00+03:00",
+    "EpochTime": 1661662740,
+    "WeatherText": "Clouds and sun",
+    "WeatherIcon": 4,
+    "HasPrecipitation": false,
+    "PrecipitationType": null,
+    "IsDayTime": true,
+    "Temperature": {
+      "Metric": {
+        "Value": 20.2,
+        "Unit": "C",
+        "UnitType": 17
+      },
+      "Imperial": {
+        "Value": 68,
+        "Unit": "F",
+        "UnitType": 18
+      }
+    },
+    "MobileLink": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us",
+    "Link": "http://www.accuweather.com/en/ru/moscow/294021/current-weather/294021?lang=en-us"
+  }
+]
