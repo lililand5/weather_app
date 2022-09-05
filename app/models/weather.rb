@@ -2,28 +2,46 @@
 
 class Weather < ApplicationRecord
   def self.current_weather
-    weather = cache_weather
-    prepared_data(weather)
+    request = 'SELECT * FROM weathers ORDER BY id DESC LIMIT 1'
+    result =
+      Rails.cache.fetch('current', expires_in: 1.minute) do
+        last
+      end
+    prepared_data(result)
   end
 
   def self.last_weathers
-    weathers = cache_weathers
-    prepared_list_data(weathers)
+    request = 'SELECT * FROM weathers ORDER BY id DESC LIMIT 24'
+    result =
+      Rails.cache.fetch('last24', expires_in: 1.minute) do
+        ActiveRecord::Base.connection.exec_query(request)[0]
+      end
+    prepared_data(result)
   end
 
   def self.max
-    weathers = cache_weathers
-    prepared_data(calculate_max(weathers))
+    request = 'SELECT * FROM (SELECT * FROM weathers ORDER BY id DESC LIMIT 24) AS t1 ORDER BY temperature DESC LIMIT 1'
+    result =
+      Rails.cache.fetch('max', expires_in: 1.minute) do
+        ActiveRecord::Base.connection.exec_query(request)[0]
+      end
+    prepared_data(result)
   end
 
   def self.min
-    weathers = cache_weathers
-    prepared_data(calculate_min(weathers))
+    request = 'SELECT * FROM (SELECT * FROM weathers ORDER BY id DESC LIMIT 24) AS t1 ORDER BY temperature ASC LIMIT 1'
+    result =
+      Rails.cache.fetch('min', expires_in: 1.minute) do
+        ActiveRecord::Base.connection.exec_query(request)[0]
+      end
+    prepared_data(result)
   end
 
   def self.avg
-    weathers = cache_weathers
-    calculate_avg(weathers)
+    request = 'SELECT AVG(temperature) AS temperature FROM (SELECT * FROM weathers ORDER BY id DESC LIMIT 24) AS t1'
+    Rails.cache.fetch('avg', expires_in: 1.minute) do
+      ActiveRecord::Base.connection.exec_query(request)[0]['temperature'].round(1)
+    end
   end
 
   def self.by_time(unix_time)
@@ -32,44 +50,10 @@ class Weather < ApplicationRecord
     TempByTimeService.new(unix_time).result
   end
 
-  def self.cache_weather
-    Rails.cache.fetch('last', expires_in: 1.minute) do
-      last
-    end
-  end
-
-  def self.cache_weathers
-    Rails.cache.fetch('last24', expires_in: 1.minute) do
-      last(24)
-    end
-  end
-
   def self.prepared_data(weather)
     {
-      time: weather.local_time,
-      temperature: weather.temperature
+      time: weather['local_time'],
+      temperature: weather['temperature']
     }
-  end
-
-  def self.prepared_list_data(weathers)
-    weathers.map do |weather|
-      {
-        time: weather.local_time,
-        temperature: weather.temperature
-      }
-    end
-  end
-
-  def self.calculate_max(weathers)
-    weathers.select { |w| w[:temperature].to_i }.max
-  end
-
-  def self.calculate_min(weathers)
-    weathers.select { |w| w[:temperature].to_i }.min
-  end
-
-  def self.calculate_avg(weathers)
-    temperatures = weathers.pluck(:temperature)
-    (temperatures.sum / temperatures.size).round(1)
   end
 end
