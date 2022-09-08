@@ -1,5 +1,8 @@
-class PagesController < ApplicationController
+# frozen_string_literal: true
 
+require 'sanitize'
+
+class PagesController < ApplicationController
   def index
     # render plain: "123"
   end
