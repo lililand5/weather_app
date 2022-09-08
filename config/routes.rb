@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
 
   mount Weathers::WeathersApi => '/'
+
+  # get '/my_page', to: 'pages#index'
+  resources :pages
 end
