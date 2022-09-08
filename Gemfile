@@ -14,6 +14,7 @@ gem 'redis', '4.7.1'
 gem 'rswag'
 gem 'sidekiq', '6.5.5'
 gem 'sidekiq-scheduler'
+gem 'sanitize'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

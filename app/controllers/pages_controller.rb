@@ -4,7 +4,7 @@ require 'sanitize'
 
 class PagesController < ApplicationController
   def index
-    # render plain: "123"
+    @pages = Page.all
   end
 
   def show
@@ -12,6 +12,8 @@ class PagesController < ApplicationController
   end
 
   def create
-    Page.create title: params[:title]
+    sanitize_params = Sanitize.fragment(params[:title])
+    Page.create title: sanitize_params
+    redirect_to action: "index"
   end
 end

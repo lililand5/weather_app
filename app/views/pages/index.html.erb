@@ -5,3 +5,9 @@
     <%= form.text_field :title %>
     <%= form.submit "Create" %>
 <% end %>
+
+
+
+<% @pages.each do |page| %>
+  <%= page.title %>
+<% end %>
