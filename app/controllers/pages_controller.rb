@@ -17,4 +17,9 @@ class PagesController < ApplicationController
     Page.create title: sanitize_params
     redirect_to action: "index"
   end
+
+  def destroy
+    Page.find_by(id: params[:id]).destroy
+    redirect_to action: "index"
+  end
 end
