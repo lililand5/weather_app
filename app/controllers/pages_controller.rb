@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'sanitize'
+# require 'sanitize'
 
 class PagesController < ApplicationController
   def index
@@ -12,7 +12,8 @@ class PagesController < ApplicationController
   end
 
   def create
-    sanitize_params = Sanitize.fragment(params[:title])
+    # sanitize_params = Sanitize.fragment(params[:title])
+    sanitize_params = params[:title]
     Page.create title: sanitize_params
     redirect_to action: "index"
   end
