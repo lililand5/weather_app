@@ -1,0 +1,64 @@
+RAILS_ENV=development
+PROJECT_ROOT=/app
+HOST=http://localhost
+ASSET_HOST=http://localhost
+RAILS_MAX_THREADS=5
+WEB_CONCURRENCY=1
+PORT=3000
+SECRET_KEY_BASE=a7d582319a670fc0d403fa9d8e6049451447c0532766ca77a76c64da7a9bdb2c7743aba9df1e9ec0b39ff720599388cdcbd853f9da8aad66b432dc352046a0f0
+RAILS_LOG_TO_STDOUT=1
+LOG_LEVEL=debug
+
+#SENTRY_DSN=
+
+FCM_SERVER_KEY=
+
+DATABASE_URL=postgres://postgres:postgres@postgres:5432/weather_app_development?pool=6
+TEST_DATABASE_URL=postgres://postgres:postgres@postgres:5432/weather_app_test?pool=6
+
+# DB_POOL = WEB_CONCURRENCY * RAILS_MAX_THREADS + SIDEKIQ_CONCURRENCY
+
+# auth via Individual Tax Number for technodom
+INN_AUTH_ENABLED=false
+
+# auth via Active Directory for gradient
+LDAP_AUTH_ENABLED=false
+LDAP_HOST=host
+LDAP_PORT=port
+LDAP_TIMEOUT=3
+
+MIRAPOLIS_ENABLED=false
+MAIL_RU_ENABLED=false
+MAIL_RU_OAUTH_SAMPLE=false
+
+# auth via Wildberries
+WB_PASSPORT_ENABLED=false
+
+# Development
+DEV_BULLET_ENABLED=true
+SEED_ENABLED=false
+
+REDIS_URL=redis://redis:6379
+REDIS_DB=0
+
+SIDEKIQ_VERBOSE=true
+SIDEKIQ_PIDFILE=./tmp/pids/sidekiq.pid
+SIDEKIQ_LOGFILE=./log/sidekiq.log
+SIDEKIQ_CONCURRENCY=1
+
+FTP_ADDRESS=12.34.56.76
+FTP_USERNAME=ftpuser
+FTP_PASSWORD='password'
+
+
+##
+# Storage
+##
+
+STORAGE_S3=false
+S3_URL=https://s3.com
+S3_HOSTNAME=s3.com
+S3_BUCKET=bucket
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=us
