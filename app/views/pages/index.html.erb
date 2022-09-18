@@ -1,11 +1,11 @@
 <h1>Hello</h1>
 
 <%= form_with url: pages_path, method: :post do |form| %>
-    <%= form.label :user, 'user: ' %>
-    <%= form.text_field :user %>
+    <%= form.label :user_id, 'user_id: ' %>
+    <%= form.text_field :user_id %>
 
-    <%= form.label :article, 'article: ' %>
-    <%= form.text_field :article %>
+    <%= form.label :article_id, 'article_id: ' %>
+    <%= form.text_field :article_id %>
 
     <%= form.label :text, 'text: ' %>
     <%= form.text_field :text %>
@@ -16,15 +16,15 @@
 <table border=1 cellspacing=0 style="width: 60%;">
   <tr>
     <th>id</th>
-    <th>user</th>
-    <th>article</th>
+    <th>user_id</th>
+    <th>article_id</th>
     <th>text</th>
   </tr>
   <% @pages.each do |page| %>
       <tr>
         <td> <%= page.id %> </td>
-        <td> <%= page.user %> </td>
-        <td> <%= page.article %> </td>
+        <td> <%= page.user_id %> </td>
+        <td> <%= page.article_id %> </td>
         <td> <%= page.text %> </td>
         <td> <%= button_to 'Delete', page_path(page.id), method: :delete, data: { confirm: true } %> </td>
       </tr>
