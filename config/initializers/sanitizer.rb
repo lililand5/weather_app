@@ -1,5 +1,6 @@
 Sanitize::Rails.configure(
-  # elements:   ['<b>'],
+  # elements: %w[ a p ],
+  elements: ['<a>'],
   # attributes: {},
 )
 

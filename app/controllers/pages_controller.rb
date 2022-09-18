@@ -13,8 +13,8 @@ class PagesController < ApplicationController
 
   def create
     # sanitize_params = Sanitize.fragment(params[:title])
-    sanitize_params = params[:title]
-    Page.create title: sanitize_params
+    # sanitize_params = params[:title]
+    Page.create user: params[:user], article: params[:article], text: params[:text]
     redirect_to action: "index"
   end
 
