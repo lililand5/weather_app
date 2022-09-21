@@ -3,6 +3,7 @@
 class WeathersController < ApplicationController
   def current
     render json: Weather.current_weather
+    #for rebase
   end
 
   def historical
