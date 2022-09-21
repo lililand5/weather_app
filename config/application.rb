@@ -19,5 +19,7 @@ module WeatherApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_job.queue_adapter = :sidekiq
+    # config.action_view.sanitized_allowed_tags = %w(b)
+    # config.action_view.sanitized_allowed_attributes = %()
   end
 end
